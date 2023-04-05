@@ -1,0 +1,153 @@
+public interface Stack<T> {
+    void push(T element);
+    T pop();
+    void display();
+    boolean overflow();
+    boolean underflow();
+}
+
+public class IntegerStack implements Stack<Integer> {
+    private int top;
+    private int[] arr;
+    private int size;
+
+    public IntegerStack(int size) {
+        this.size = size;
+        top = -1;
+        arr = new int[size];
+    }
+
+    public void push(String element) {
+        if (!overflow()) {
+            int num = Integer.parseInt(element);
+            arr[++top] = num;
+        } else {
+            System.out.println("Stack Overflow");
+        }
+    }
+
+    public Integer pop() {
+        if (!underflow()) {
+            return arr[top--];
+        } else {
+            System.out.println("Stack Underflow");
+            return null;
+        }
+    }
+
+    public void display() {
+        if (!underflow()) {
+            System.out.print("Stack: ");
+            for (int i = top; i >= 0; i--) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean overflow() {
+        return top == size - 1;
+    }
+
+    public boolean underflow() {
+        return top == -1;
+    }
+}
+
+public class StringStack implements Stack<String> {
+    private int top;
+    private String[] arr;
+    private int size;
+
+    public StringStack(int size) {
+        this.size = size;
+        top = -1;
+        arr = new String[size];
+    }
+
+    public void push(String element) {
+        if (!overflow()) {
+            arr[++top] = element;
+        } else {
+            System.out.println("Stack Overflow");
+        }
+    }
+
+    public String pop() {
+        if (!underflow()) {
+            return arr[top--];
+        } else {
+            System.out.println("Stack Underflow");
+            return null;
+        }
+    }
+
+    public void display() {
+        if (!underflow()) {
+            System.out.print("Stack: ");
+            for (int i = top; i >= 0; i--) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean overflow() {
+        return top == size - 1;
+    }
+
+    public boolean underflow() {
+        return top == -1;
+    }
+}
+
+public class DoubleStack implements Stack<Double> {
+    private int top;
+    private double[] arr;
+    private int size;
+
+    public DoubleStack(int size) {
+        this.size = size;
+        top = -1;
+        arr = new double[size];
+    }
+
+    public void push(String element) {
+        if (!overflow()) {
+            double num = Double.parseDouble(element);
+            arr[++top] = num;
+        } else {
+            System.out.println("Stack Overflow");
+        }
+    }
+
+    public Double pop() {
+        if (!underflow()) {
+            return arr[top--];
+        } else {
+            System.out.println("Stack Underflow");
+            return null;
+        }
+    }
+
+    public void display() {
+        if (!underflow()) {
+            System.out.print("Stack: ");
+            for (int i = top; i >= 0; i--) {
+                System.out.print(arr[i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public boolean overflow() {
+        return top == size - 1;
+    }
+
+    public boolean underflow() {
+        return top == -1;
+    }
+}
+
+public class StackTest {
+    public static void main(String[]
